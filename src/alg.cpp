@@ -22,7 +22,11 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-  return calcItem(x, count);
+  double result = 0;
+  for (int i = count; i >= 0; --i) {
+    result += pown(x, i) / fact(i);
+  }
+  return result;
 }
 
 double sinn(double x, uint16_t count) {
